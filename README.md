@@ -1,5 +1,5 @@
 # bash
-Команды для работы с файлами и папками
+#### Команды для работы с файлами и папками_1
 
 ```bash
 
@@ -31,3 +31,37 @@ nano file3.txt + manual replacement
 
 ```
 
+#### Команды для работы с файлами и папками_2
+
+```bash
+
+mkdir test3                                   # Создать папку test 3 
+cd test3                                      # Открыть test 3 
+echo -e "row1\nrow2\nrow3\nrow4" > file4.txt  # Добавить в папку test 3 три файла 4, 5 и 6, в каждом из которых должно быть по 4 строки row1, row2, row3, row4
+echo -e "row1\nrow2\nrow3\nrow4" > file5.txt  
+echo -e "row1\nrow2\nrow3\nrow4" > file6.txt 
+grep "row2" file5.txt                         # Найдите строку row2 в файле 5 
+grep -R "row"                                 # Найдите строку row в папке test3
+grep -c "row" file6.txt                       # Посчитайте сколько строк с содержимым row в файле 6
+find . -name "file5.txt"                      # Найдите файл 5 внутри папки test3
+find . -name "file5.txt" -delete              # Используя команду find, удалите файл 5
+echo test > file4.txt                         # Используя команду echo, добавьте слово test в файл 4
+sed 's/test/fail/g' file4.txt                 # Замените слово test в файле 4 на fail
+echo test >> file4.txt                        # Добавьте в файл 4 слово test так, чтобы сохранилось содержимое
+ps aux                                        # Просмотрите все процессы для юзеров не только в консоли, которые происходят в системе
+kill 123                                      # Убейте любой неважный процесс в консоли
+ping artsiomrusau.com                         # Узнайте доступность ресурса rusau.net, используя ping
+ping -c 5 artsiomrusau.com                    # Отправьте 5 пакетов на сайт rusau.net  
+curl https://petstore.swagger.io/v2/pet/      # Используя GET и команду curl, получите информацию о зарегистрированных питомцах с любым статусом на https://petstore.swagger.io/
+findByStatus?status=registered                
+curl -X POST https://petstore.swagger.io/     # Используя POST и команду curl, создайте нового пользователя на https://petstore.swagger.io/
+v2/user --data "id=1" 
+--data "username=Darrel_Volkman80" 
+--data "firstName=Darrel" 
+--data "lastName=Volkman" 
+--data "email=Darrel_Volkman80@gmail.com" 
+--data "password=g8kq2W1z_utLEBs" 
+--data "phone=7442783865" 
+--data "userStatus=0"
+
+```
