@@ -57,14 +57,27 @@ curl -X 'GET' \                               # Используя GET и ком
 'https://petstore.swagger.io/v2/pet/findByStatus?status=available' \
 -H 'accept: application/json'
           
-curl -X POST https://petstore.swagger.io/     # Используя POST и команду curl, создайте нового пользователя на https://petstore.swagger.io/
-v2/user --data "id=1" 
---data "username=Darrel_Volkman80" 
---data "firstName=Darrel" 
---data "lastName=Volkman" 
---data "email=Darrel_Volkman80@gmail.com" 
---data "password=g8kq2W1z_utLEBs" 
---data "phone=7442783865" 
---data "userStatus=0"
+curl -X 'POST' \                              # Используя POST и команду curl, создайте нового питомца на https://petstore.swagger.io/
+  'https://petstore.swagger.io/v2/pet' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "id": 1,
+  "category": {
+    "id": 14,
+    "name": "Mikkie"
+  },
+  "name": "doggie",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "string"
+    }
+  ],
+  "status": "available"
+}'
 
 ```
