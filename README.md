@@ -51,9 +51,12 @@ echo test >> file4.txt                        # Добавьте в файл 4 �
 ps aux                                        # Просмотрите все процессы для юзеров не только в консоли, которые происходят в системе
 kill 123                                      # Убейте любой неважный процесс в консоли
 ping artsiomrusau.com                         # Узнайте доступность ресурса rusau.net, используя ping
-ping -c 5 artsiomrusau.com                    # Отправьте 5 пакетов на сайт rusau.net  
-curl https://petstore.swagger.io/v2/pet/      # Используя GET и команду curl, получите информацию о зарегистрированных питомцах с любым статусом на https://petstore.swagger.io/
-findByStatus?status=registered                
+ping -c 5 artsiomrusau.com                    # Отправьте 5 пакетов на сайт rusau.net
+
+curl -X 'GET' \                               # Используя GET и команду curl, получите информацию о зарегистрированных питомцах с любым статусом на https://petstore.swagger.io/
+'https://petstore.swagger.io/v2/pet/findByStatus?status=available' \
+-H 'accept: application/json'
+          
 curl -X POST https://petstore.swagger.io/     # Используя POST и команду curl, создайте нового пользователя на https://petstore.swagger.io/
 v2/user --data "id=1" 
 --data "username=Darrel_Volkman80" 
